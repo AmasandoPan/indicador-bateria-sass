@@ -34,21 +34,21 @@ body {
   margin-right: 2px;
 }
 .battery__bar--1 {
-  background: #2ecc71;
+  background: #e74c3c;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
 }
 .battery__bar--2 {
-  background: #2ecc71;
+  background: #e74c3c;
 }
 .battery__bar--3 {
-  background: #e74c3c;
+  background: #2ecc71;
 }
 .battery__bar--4 {
-  background: #e74c3c;
+  background: #2ecc71;
 }
 .battery__bar--5 {
-  background: #e74c3c;
+  background: #2ecc71;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
   margin-right: 0;

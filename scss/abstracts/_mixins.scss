@@ -2,8 +2,8 @@
 
 @mixin set-color($level) {
     @if $level <= 2 {
-        background: var.$color-success;
-    } @else {
         background: var.$color-danger;
+    } @else {
+        background: var.$color-success;
     }
 }
