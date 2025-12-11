@@ -1,0 +1,6 @@
+@use 'variables' as var; 
+
+@function calc-height($numero) {
+    // Accede a la variable con el prefijo
+    @return var.$bar-height * $numero;
+}

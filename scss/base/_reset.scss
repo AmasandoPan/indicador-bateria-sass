@@ -1,0 +1,12 @@
+@use "../abstracts/variables" as var;
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // Usamos la variable para el color de fondo
+  background-color: var.$color-background; 
+}

@@ -1,0 +1,56 @@
+@use "sass:math"; 
+@use "../abstracts/variables" as var;
+@use "../abstracts/functions" as func;
+@use "../abstracts/mixins" as mix;
+
+.battery {
+  display: flex;
+  flex-direction: row;
+  padding: 4px;
+  border: 2px solid var.$color-border;
+  border-radius: var.$border-radius * 2;
+
+  gap: 0;
+  align-items: center;
+
+  // Color de fondo del cuerpo principal (blanco/gris claro)
+  background-color: var.$color-battery-body;
+
+  // Tapa/poste de la batería
+ &::after {
+    content: "";
+    width: 6px; 
+    // math.div(dividendo, divisor)
+    height: math.div(var.$bar-height, 4); 
+    background-color: var.$color-battery-cap;
+    display: block;
+    margin-left: 4px; 
+    border-top-right-radius: 2px; 
+    border-bottom-right-radius: 2px;
+  }
+
+  &__bar {
+    height: var.$bar-height;
+    width: var.$bar-width;
+    margin-right: var.$bar-gap;
+
+    @for $i from 1 through var.$bar-count {
+      &--#{$i} {
+        // Aplica color
+        @include mix.set-color($i);
+
+        // Lógica para los bordes redondeados solo en las barras de los extremos
+        @if $i == 1 {
+          // Primera barra, redondeada a la izquierda
+          border-top-left-radius: var.$border-radius;
+          border-bottom-left-radius: var.$border-radius;
+        } @else if $i == var.$bar-count {
+          // Última barra, redondeada a la derecha y sin margen
+          border-top-right-radius: var.$border-radius;
+          border-bottom-right-radius: var.$border-radius;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
